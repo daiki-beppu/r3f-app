@@ -49,7 +49,7 @@ React Native と Expo の基本を理解し、TypeScript を使った開発の�
 
 - [x] JSI（JavaScript Interface）が従来のブリッジと何が違うか理解
 - [x] Fabric レンダラーの役割を調査
-- [ ] TurboModules の概念を理解（実装は不要、概念のみ）
+- [x] TurboModules の概念を理解（実装は不要、概念のみ）
 - [x] `app.json` の `newArchEnabled: true` の意味を確認
 
 ### 達成条件
@@ -100,35 +100,35 @@ Tailwind CSS v4 をベースにした Uniwind を導入し、軽量で保守性�
 
 - [x] `uniwind` パッケージをインストール
 - [x] Tailwind v4 設定ファイルの作成
-- [ ] CSS Variables ベースのテーマ設定
-- [ ] VS Code の Tailwind CSS IntelliSense を設定
+- [x] CSS Variables ベースのテーマ設定
+- [x] VS Code の Tailwind CSS IntelliSense を設定
 
 #### 2.2 CSS Variables テーマシステム
 
-- [ ] Tailwind v4 の CSS Variables の仕組みを理解
-- [ ] ライト/ダークモードのカラートークン定義
-- [ ] システムテーマとの同期実装
-- [ ] カスタムカラーパレットの作成
+- [x] Tailwind v4 の CSS Variables の仕組みを理解
+- [x] ライト/ダークモードのカラートークン定義
+- [x] システムテーマとの同期実装
+- [x] カスタムカラーパレットの作成
 
 #### 2.3 基本コンポーネント作成
 
-- [ ] `components/ui/Button.tsx` - サイズ・バリアント対応
-- [ ] `components/ui/Card.tsx` - ダーク対応のカード
-- [ ] `components/ui/Toggle.tsx` - アニメーション付きトグル
-- [ ] `components/ui/Container.tsx` - SafeArea 対応コンテナ
+- [x] `components/ui/Button.tsx` - サイズ・バリアント対応
+- [x] `components/ui/Card.tsx` - ダーク対応のカード
+- [x] `components/ui/Toggle.tsx` - アニメーション付きトグル
+- [x] `components/ui/Container.tsx` - SafeArea 対応コンテナ
 
 #### 2.4 レスポンシブ対応
 
-- [ ] Tailwind のブレークポイント（sm、md、lg）の設定
-- [ ] 画面サイズに応じたレイアウト調整
-- [ ] タブレット・スマホでの表示確認
+- [x] Tailwind のブレークポイント（sm、md、lg）の設定
+- [x] 画面サイズに応じたレイアウト調整
+- [x] タブレット・スマホでの表示確認
 
 #### 2.5 Reanimated でトランジション
 
-- [ ] `react-native-reanimated` の基本を理解
-- [ ] useSharedValue、useAnimatedStyle の使い方
-- [ ] withTiming、withSpring アニメーション
-- [ ] ボタンタップやトグル切り替えにアニメーション適用
+- [x] `react-native-reanimated` の基本を理解
+- [x] useSharedValue、useAnimatedStyle の使い方
+- [x] withTiming、withSpring アニメーション
+- [x] ボタンタップやトグル切り替えにアニメーション適用
 
 ### 達成条件
 

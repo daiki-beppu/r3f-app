@@ -830,3 +830,5 @@ src ディレクリを追加したのでそちらに対応
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }
 ```
+
+uniwind はセットアップを学べたので満足
