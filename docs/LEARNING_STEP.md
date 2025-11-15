@@ -83,80 +83,100 @@ React Native と Expo の基本を理解し、TypeScript を使った開発の�
 
 ---
 
-## ステップ2: Uniwind 導入（Tailwind v4）
+## ステップ2: React Native Reusables 導入
 
 ### 📋 概要
 
-Tailwind CSS v4 をベースにした Uniwind を導入し、軽量で保守性の高い UI レイヤーを構築します。3D レイヤーと干渉しない設計を意識し、CSS Variables を使ったテーマシステムを理解します。
+React Native Reusables を使って、型安全で美しい UI コンポーネントライブラリを構築します。NativeWind v4 によるスタイリング、Headless UI パターン、アクセシビリティ対応を学び、3D レイヤーと干渉しない設計を意識します。
 
 ### 前提条件
 
 - ステップ1が完了していること
 - Tailwind CSS の基本概念（utility-first）を理解していること
+- React のコンポーネント合成パターンを理解していること
 
 ### 実施タスク
 
-#### 2.1 Uniwind セットアップ
+#### 2.1 React Native Reusables セットアップ
 
-- [x] `uniwind` パッケージをインストール
-- [x] Tailwind v4 設定ファイルの作成
-- [x] CSS Variables ベースのテーマ設定
-- [x] VS Code の Tailwind CSS IntelliSense を設定
+- [ ] 必要なパッケージのインストール
+  - `nativewind`
+  - `react-native-reanimated`
+  - `@rn-primitives/*` 関連パッケージ
+- [ ] NativeWind v4 の設定（`tailwind.config.js`）
+- [ ] `global.css` の設定
+- [ ] VS Code の Tailwind CSS IntelliSense を設定
 
-#### 2.2 CSS Variables テーマシステム
+#### 2.2 NativeWind v4 とテーマシステム
 
-- [x] Tailwind v4 の CSS Variables の仕組みを理解
-- [x] ライト/ダークモードのカラートークン定義
-- [x] システムテーマとの同期実装
-- [x] カスタムカラーパレットの作成
+- [ ] NativeWind v4 の class-based スタイリングの理解
+- [ ] ライト/ダークモードの class 切り替え（`dark:` prefix）
+- [ ] システムテーマとの同期実装（`useColorScheme` 使用）
+- [ ] カスタムカラーパレットの作成（`tailwind.config.js`）
+- [ ] テーマプロバイダーの実装
 
 #### 2.3 基本コンポーネント作成
 
-- [x] `components/ui/Button.tsx` - サイズ・バリアント対応
-- [x] `components/ui/Card.tsx` - ダーク対応のカード
-- [x] `components/ui/Toggle.tsx` - アニメーション付きトグル
-- [x] `components/ui/Container.tsx` - SafeArea 対応コンテナ
+- [ ] `components/ui/button.tsx` - 型安全なバリアント対応
+- [ ] `components/ui/card.tsx` - ダーク対応のカード
+- [ ] `components/ui/switch.tsx` - アニメーション付きスイッチ
+- [ ] `components/ui/text.tsx` - 型安全なテキストコンポーネント
+- [ ] コンポーネントの TypeScript 型定義
 
-#### 2.4 レスポンシブ対応
+#### 2.4 Headless UI パターンの理解
 
-- [x] Tailwind のブレークポイント（sm、md、lg）の設定
-- [x] 画面サイズに応じたレイアウト調整
-- [x] タブレット・スマホでの表示確認
+- [ ] `@rn-primitives` を使った Headless コンポーネント
+- [ ] コンポーネント合成パターン（Compound Components）
+- [ ] Context API によるステート共有
+- [ ] カスタムフックの作成
 
-#### 2.5 Reanimated でトランジション
+#### 2.5 アクセシビリティとアニメーション
 
-- [x] `react-native-reanimated` の基本を理解
-- [x] useSharedValue、useAnimatedStyle の使い方
-- [x] withTiming、withSpring アニメーション
-- [x] ボタンタップやトグル切り替えにアニメーション適用
+- [ ] `accessibilityRole`、`accessibilityLabel` の設定
+- [ ] `accessibilityState` によるステート通知
+- [ ] `react-native-reanimated` の基本理解
+- [ ] `useSharedValue`、`useAnimatedStyle` の使い方
+- [ ] `withTiming`、`withSpring` アニメーション
+- [ ] ボタンタップやスイッチ切り替えにアニメーション適用
+
+#### 2.6 レスポンシブ対応
+
+- [ ] Tailwind のブレークポイント（sm、md、lg、xl）の設定
+- [ ] 画面サイズに応じたレイアウト調整
+- [ ] `useMediaQuery` フックの実装（オプション）
+- [ ] タブレット・スマホでの表示確認
 
 ### 達成条件
 
 ✅ **理解度**
 
-- Tailwind v4 の CSS Variables ベーステーマの仕組みを説明できる
-- Uniwind と通常の StyleSheet の違いを理解している
+- React Native Reusables の Headless UI パターンを説明できる
+- NativeWind v4 の class-based スタイリングを理解している
 - Reanimated の Shared Value の概念を理解している
 - ダークモード切り替えの実装方法を説明できる
+- アクセシビリティの重要性とその実装方法を理解している
 
 ✅ **実装力**
 
-- Uniwind を使って新しいコンポーネントを型安全に作成できる
-- CSS Variables を編集してテーマカラーを変更できる
+- React Native Reusables を使って新しいコンポーネントを型安全に作成できる
+- NativeWind で複雑なレイアウトを構築できる
 - Reanimated で基本的なアニメーションを実装できる
+- アクセシビリティ対応のコンポーネントを作成できる
 
 ✅ **成果物**
 
-- 再利用可能な UI コンポーネントライブラリ（Button、Card、Toggle、Container）
+- 再利用可能な UI コンポーネントライブラリ（Button、Card、Switch、Text）
 - ライト/ダークモード対応のテーマシステム
 - アニメーション付きのインタラクティブ UI
+- アクセシビリティ対応コンポーネント
 - コンポーネントカタログ画面（各コンポーネントを表示）
 
 ### 確認方法
 
-- テーマカラーを変更して、全コンポーネントに反映されるか
+- テーマカラーを `tailwind.config.js` で変更して、全コンポーネントに反映されるか
 - ダークモードとライトモードを切り替えて、違和感なく動作するか
 - アニメーションが 60fps でスムーズに動作するか（React Native Performance Monitor で確認）
+- VoiceOver（iOS）/ TalkBack（Android）で適切に読み上げられるか
 
 ---
 
@@ -477,7 +497,7 @@ Reanimated の Shared Value を R3F の useFrame と同期させ、UI アニメ�
 
 ---
 
-## ステップ7: Uniwind × R3F × Skia 統合アーキテクチャ完成
+## ステップ7: React Native Reusables × R3F × Skia 統合アーキテクチャ完成
 
 ### 📋 概要
 
@@ -502,10 +522,13 @@ src/
 │   ├── hooks/
 │   ├── utils/
 │   └── types/
-├── ui/                # UI コンポーネント（Uniwind）
-│   ├── Button.tsx
-│   ├── Card.tsx
-│   └── ...
+├── components/        # UI コンポーネント（React Native Reusables）
+│   ├── ui/
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   ├── switch.tsx
+│   │   └── ...
+│   └── primitives/    # Headless primitives
 ├── 3d/                # 3D コンポーネント（R3F）
 │   ├── Scene.tsx
 │   ├── Camera.tsx
@@ -513,13 +536,14 @@ src/
 ├── store/             # 状態管理（Zustand）
 │   ├── useThemeStore.ts
 │   └── use3DStore.ts
-└── theme/             # テーマ設定
-    └── tokens.ts
+└── lib/               # ユーティリティとヘルパー
+    ├── utils.ts
+    └── cn.ts          # classname helper
 ```
 
 - [ ] ディレクトリを作成
 - [ ] 既存コードを適切に移動
-- [ ] パスエイリアスを設定（`@/features`, `@/ui`, `@/3d` など）
+- [ ] パスエイリアスを設定（`@/features`, `@/components`, `@/3d` など）
 
 #### 7.2 状態管理の統合（Zustand）
 
@@ -531,10 +555,11 @@ src/
 
 #### 7.3 テーマシステムの統一
 
-- [ ] Tailwind v4 CSS Variables を統一ソースに
-- [ ] UI コンポーネントと 3D マテリアルが同じトークンを参照
-- [ ] システムテーマ検出と自動切り替え
+- [ ] NativeWind v4 の `tailwind.config.js` を統一ソースに
+- [ ] UI コンポーネントと 3D マテリアルが同じカラートークンを参照
+- [ ] システムテーマ検出と自動切り替え（`useColorScheme`）
 - [ ] カスタムテーマの実装（複数テーマ対応）
+- [ ] テーマプロバイダーでアプリ全体を wrap
 
 #### 7.4 パフォーマンス最適化
 
@@ -600,7 +625,8 @@ src/
 
 - **React Native**: [公式ドキュメント](https://reactnative.dev/)
 - **Expo**: [Expo Docs](https://docs.expo.dev/)
-- **Uniwind**: [Uniwind GitHub](https://github.com/uniwind/uniwind)
+- **React Native Reusables**: [公式サイト](https://rnr-docs.vercel.app/)
+- **NativeWind**: [NativeWind v4 Docs](https://www.nativewind.dev/)
 - **Skia**: [@shopify/react-native-skia Docs](https://shopify.github.io/react-native-skia/)
 - **R3F**: [React Three Fiber Docs](https://docs.pmnd.rs/react-three-fiber/)
 - **Reanimated**: [Reanimated Docs](https://docs.swmansion.com/react-native-reanimated/)
@@ -612,10 +638,11 @@ src/
 
 すべてのステップを完了すると、以下ができるようになります：
 
-1. **Uniwind** で軽量・高速な UI を構築
-2. **R3F** で本格的な 3D シーンを React 的に記述
-3. **Skia** でネイティブ高速レンダリング
-4. **Reanimated** で UI と 3D を同期
-5. **統合アーキテクチャ** でスケーラブルなアプリ開発
+1. **React Native Reusables** で型安全・美しい・アクセシブルな UI を構築
+2. **NativeWind v4** でモダンなスタイリングを実現
+3. **R3F** で本格的な 3D シーンを React 的に記述
+4. **Skia** でネイティブ高速レンダリング
+5. **Reanimated** で UI と 3D を同期
+6. **統合アーキテクチャ** でスケーラブルなアプリ開発
 
 これらを組み合わせて、ネイティブアプリの性能と Web の開発体験を兼ね備えた、次世代のモバイルアプリを作成できます。

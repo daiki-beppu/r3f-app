@@ -1,9 +1,9 @@
-# R3F × Skia × Uniwind 学習ロードマップ
+# R3F × Skia × React Native Reusables 学習ロードマップ
 
 ## 🎯 ゴール
 
 - React Native（Expo）で
-  - 軽量で高速な UI（Uniwind）
+  - 美しく型安全な UI（React Native Reusables）
   - 本格 3D 描画（R3F × Skia）
 - を組み合わせたアプリを作れるようになる
 
@@ -27,27 +27,28 @@
 
 ---
 
-## 2. Uniwind 導入（Tailwind v4）
+## 2. React Native Reusables 導入
 
-**目的:** UI レイヤーを軽量に構成し、3D と干渉しない設計を作る
+**目的:** 型安全で美しい UI コンポーネントライブラリを構築し、3D と干渉しない設計を作る
 
 ### 学ぶこと
 
-- Uniwind セットアップ
-- Tailwind v4 の変数型テーマ（CSS variables）
-- コンポーネント設計
+- React Native Reusables のセットアップ
+- NativeWind v4 による Tailwind スタイリング
+- Headless UI パターンの理解
+- アクセシビリティ対応（ARIA 属性）
 - SafeArea / Responsive 対応
 
 ### 作るもの
 
-- Button / Card / Toggle コンポーネント
-- ダークモード対応テーマ
+- Button / Card / Switch コンポーネント
+- ダークモード対応テーマ（class-based）
 - Reanimated を使った簡単トランジション
 
 ### 目標
 
-- 3D と相性の良い軽量 UI が作れる
-- Tailwind v4 テーマ理解
+- 3D と相性の良い型安全な UI が作れる
+- NativeWind v4 でのスタイリングを理解
 
 ---
 
@@ -148,17 +149,17 @@
 
 ---
 
-## 7. Uniwind × R3F × Skia 統合アーキテクチャ完成
+## 7. React Native Reusables × R3F × Skia 統合アーキテクチャ完成
 
 **目的:** 実アプリとして成立する構成
 
 ### 設計ポイント
 
-- UIレイヤー（Uniwind）
+- UIレイヤー（React Native Reusables）
 - 3Dレイヤー（R3F）
 - 描画レイヤー（Skia）
 - 状態管理（Zustand）
-- テーマ統一（Tailwind v4 CSS変数）
+- テーマ統一（NativeWind class-based theming）
 - モジュール構成（features / shared / ui / 3d）
 
 ### ディレクトリ例
