@@ -36,7 +36,7 @@ React Native と Expo の基本を理解し、TypeScript を使った開発の�
 - [x] View、Text、Pressable を使った簡単なコンポーネント作成
 - [x] StyleSheet と inline style の違いを理解
 - [x] Flexbox レイアウトの練習（column、row、justifyContent、alignItems）
-- [ ] SafeAreaView の使い方を確認
+- [x] SafeAreaView の使い方を確認
 
 #### 1.4 TypeScript 型の活用
 
@@ -98,8 +98,8 @@ Tailwind CSS v4 をベースにした Uniwind を導入し、軽量で保守性�
 
 #### 2.1 Uniwind セットアップ
 
-- [ ] `uniwind` パッケージをインストール
-- [ ] Tailwind v4 設定ファイルの作成
+- [x] `uniwind` パッケージをインストール
+- [x] Tailwind v4 設定ファイルの作成
 - [ ] CSS Variables ベースのテーマ設定
 - [ ] VS Code の Tailwind CSS IntelliSense を設定
 

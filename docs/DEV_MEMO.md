@@ -177,13 +177,13 @@ Fabric は React Native の新しい**レンダリングシステム**。JSI を
 
 **旧レンダラー（Paper）からの主な変更:**
 
-| 観点 | 旧レンダラー（Paper） | Fabric |
-|------|---------------------|--------|
-| 通信方法 | Bridge 経由（非同期） | JSI 経由（同期可能） |
+| 観点                     | 旧レンダラー（Paper）        | Fabric                                |
+| ------------------------ | ---------------------------- | ------------------------------------- |
+| 通信方法                 | Bridge 経由（非同期）        | JSI 経由（同期可能）                  |
 | レンダリングパイプライン | JavaScript → Bridge → Native | JavaScript → C++ Shadow Tree → Native |
-| レイアウト計算 | Native 側でシングルスレッド | C++ で並列処理可能 |
-| 同期的な測定 | 不可（コールバック必須） | 可能（即座に値取得） |
-| UI 更新のタイミング | バッチ処理で遅延 | フレームに同期 |
+| レイアウト計算           | Native 側でシングルスレッド  | C++ で並列処理可能                    |
+| 同期的な測定             | 不可（コールバック必須）     | 可能（即座に値取得）                  |
+| UI 更新のタイミング      | バッチ処理で遅延             | フレームに同期                        |
 
 ### JSI との関係
 
@@ -301,7 +301,7 @@ sequenceDiagram
 ```json
 {
   "expo": {
-    "newArchEnabled": true  // ← Fabric + TurboModules を有効化
+    "newArchEnabled": true // ← Fabric + TurboModules を有効化
   }
 }
 ```
@@ -381,17 +381,14 @@ graph TB
 ### 重要ポイント
 
 1. **JSI は土台、Fabric はレンダリングシステム**
-
    - JSI: JavaScript ⇄ C++ 間のメモリ共有の仕組み
    - Fabric: JSI を使って UI を高速レンダリング
 
 2. **3 フェーズによる効率化**
-
    - Render（JS）→ Layout（Fabric Thread・並列）→ Commit（UI Thread）
    - レイアウト計算を並列化することで、複雑な UI でも 60fps を維持
 
 3. **Worklets の実現**
-
    - Fabric + JSI により UI Thread で JavaScript を直接実行
    - Reanimated で UI-3D 同期アニメーションが可能に
 
@@ -422,21 +419,21 @@ TurboModules → 「カメラで写真を撮る」「位置情報を取得する
 
 **主な違い一覧:**
 
-| 観点 | 旧 Native Modules | TurboModules |
-|------|------------------|-------------|
-| **通信方法** | Bridge（非同期） | JSI（同期可能） |
-| **シリアライゼーション** | JSON 文字列化（毎回） | なし（メモリ参照） |
-| **初期化** | アプリ起動時（全て） | 使用時のみ（遅延ロード） |
-| **パフォーマンス** | 基準（1x） | 10-1000倍高速 |
-| **型安全性** | 限定的 | TypeScript/Flow 統合 |
-| **API アクセス** | `NativeModules.ModuleName` | `TurboModuleRegistry.get()` |
+| 観点                     | 旧 Native Modules          | TurboModules                |
+| ------------------------ | -------------------------- | --------------------------- |
+| **通信方法**             | Bridge（非同期）           | JSI（同期可能）             |
+| **シリアライゼーション** | JSON 文字列化（毎回）      | なし（メモリ参照）          |
+| **初期化**               | アプリ起動時（全て）       | 使用時のみ（遅延ロード）    |
+| **パフォーマンス**       | 基準（1x）                 | 10-1000倍高速               |
+| **型安全性**             | 限定的                     | TypeScript/Flow 統合        |
+| **API アクセス**         | `NativeModules.ModuleName` | `TurboModuleRegistry.get()` |
 
 **パフォーマンス比較（実測値）:**
 
-| 操作 | Native Modules | TurboModules | 改善率 |
-|------|----------------|-------------|--------|
-| ネイティブメソッド呼出 | 2-4ms | 0.01-0.1ms | 20-400倍 |
-| 大量データ転送 | 20-100ms | 0.1-1ms | 20-1000倍 |
+| 操作                   | Native Modules | TurboModules | 改善率    |
+| ---------------------- | -------------- | ------------ | --------- |
+| ネイティブメソッド呼出 | 2-4ms          | 0.01-0.1ms   | 20-400倍  |
+| 大量データ転送         | 20-100ms       | 0.1-1ms      | 20-1000倍 |
 
 ### アーキテクチャ比較図
 
@@ -542,7 +539,7 @@ Level 2-B: TurboModules（ネイティブ機能）
 ```javascript
 // アプリ起動時にすべてのモジュールをロード
 // ↓ 起動が遅い（使わない機能もロードされる）
-import { NativeModules } from 'react-native';
+import { NativeModules } from "react-native";
 const { Camera, GPS, FileSystem, Bluetooth } = NativeModules;
 // すべて起動時にメモリに常駐
 ```
@@ -552,10 +549,10 @@ const { Camera, GPS, FileSystem, Bluetooth } = NativeModules;
 ```javascript
 // 使用時にのみロード
 // ↓ 起動が速い（必要な機能だけロード）
-import { TurboModuleRegistry } from 'react-native';
+import { TurboModuleRegistry } from "react-native";
 
 // 実際に使うタイミングでロード
-const Camera = TurboModuleRegistry.get('RNCamera');
+const Camera = TurboModuleRegistry.get("RNCamera");
 ```
 
 #### 2. 同期的な実行
@@ -584,7 +581,7 @@ console.log(measurements.width); // すぐ使える
 
 ```javascript
 // 型定義が不完全
-NativeModules.Camera.takePicture('wrong', 'types'); // 実行時エラー
+NativeModules.Camera.takePicture("wrong", "types"); // 実行時エラー
 ```
 
 **TurboModules:**
@@ -595,8 +592,8 @@ interface CameraModule {
   takePicture(options: PhotoOptions): Promise<PhotoResult>;
 }
 
-const Camera = TurboModuleRegistry.get<CameraModule>('RNCamera');
-Camera.takePicture('wrong'); // コンパイルエラー（型が合わない）
+const Camera = TurboModuleRegistry.get<CameraModule>("RNCamera");
+Camera.takePicture("wrong"); // コンパイルエラー（型が合わない）
 ```
 
 ### このプロジェクトでの TurboModules
@@ -608,7 +605,7 @@ Camera.takePicture('wrong'); // コンパイルエラー（型が合わない）
 ```json
 {
   "expo": {
-    "newArchEnabled": true  // ← TurboModules + Fabric + JSI を有効化
+    "newArchEnabled": true // ← TurboModules + Fabric + JSI を有効化
   }
 }
 ```
@@ -644,7 +641,7 @@ Camera.takePicture('wrong'); // コンパイルエラー（型が合わない）
 **Reanimated が TurboModules を活用:**
 
 ```javascript
-import { useSharedValue, useAnimatedStyle } from 'react-native-reanimated';
+import { useSharedValue, useAnimatedStyle } from "react-native-reanimated";
 
 // Reanimated は内部で TurboModules + JSI を活用
 const offset = useSharedValue(0);
@@ -705,33 +702,114 @@ useFrame(() => {
 
 ```javascript
 // 旧: JSON 経由で毎フレーム変換（遅い＆メモリ消費）
-const vertices = [/* 10000頂点 */];
+const vertices = [
+  /* 10000頂点 */
+];
 const serialized = JSON.stringify(vertices); // 変換コスト大
 bridge.send(serialized);
 
 // 新: TurboModules でメモリ参照を直接共有（高速＆効率的）
-const vertices = new Float32Array([/* 10000頂点 */]);
+const vertices = new Float32Array([
+  /* 10000頂点 */
+]);
 TurboModule.updateMesh(vertices); // メモリ参照を渡すだけ
 ```
 
 ### 重要ポイント
 
 1. **JSI は土台、TurboModules はネイティブ機能アクセス**
-
    - JSI: メモリ共有の仕組み
    - Fabric: UI レンダリング
    - TurboModules: ネイティブ機能（カメラ、センサー等）
 
 2. **遅延初期化でアプリ起動を高速化**
-
    - 旧: すべてのモジュールを起動時にロード
    - 新: 使用時のみロード → 起動時間短縮
 
 3. **同期的な呼び出しが可能**
-
    - 複雑な計算（3D オブジェクトのサイズ取得 → UI 調整）が簡単に
    - コールバック地獄から解放
 
 4. **パフォーマンス改善**
    - 10-1000倍の高速化（実測値）
    - R3F/Skia での毎フレーム処理に最適
+
+## uniwind のセットアップ
+
+最初から導入するなら
+
+```bash
+npx create-expo-app -e with-router-uniwind
+```
+
+あとから導入するなら
+
+```bash
+ % npx expo install uniwind tailwindcss
+```
+
+導入後にやったこと
+
+- プロジェクトルートに `src` ディレクトリの作成
+- `src/global.css` を作成して下記の内容を追加
+
+  ```css
+  @import "tailwindcss";
+  @import "uniwind";
+  ```
+
+- プロジェクトルートに `metro.config.js` を作成して下記の内容を追加(公式ドキュメントからそのまま引用)
+
+  ```js
+  const { getDefaultConfig } = require("expo/metro-config");
+  const { withUniwindConfig } = require("uniwind/metro"); // make sure this import exists
+
+  /** @type {import('expo/metro-config').MetroConfig} */
+  const config = getDefaultConfig(__dirname);
+
+  // Apply uniwind modifications before exporting
+  const uniwindConfig = withUniwindConfig(config, {
+    // relative path to your global.css file
+    cssEntryFile: "./src/global.css",
+    // optional: path to typings
+    dtsFile: "./src/uniwind-types.d.ts",
+  });
+
+  module.exports = uniwindConfig;
+  ```
+
+- intellisense を追加するため `.vscode/setting.json` に下記の内容を追加
+
+  ```json
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "headerClassName",
+    "contentContainerClassName",
+    "columnWrapperClassName",
+    "endFillColorClassName",
+    "imageClassName",
+    "tintColorClassName",
+    "ios_backgroundColorClassName",
+    "thumbColorClassName",
+    "trackColorOnClassName",
+    "trackColorOffClassName",
+    "selectionColorClassName",
+    "cursorColorClassName",
+    "underlineColorAndroidClassName",
+    "placeholderTextColorClassName",
+    "selectionHandleColorClassName",
+    "colorsClassName",
+    "progressBackgroundColorClassName",
+    "titleColorClassName",
+    "underlayColorClassName",
+    "colorClassName",
+    "drawerBackgroundColorClassName",
+    "statusBarBackgroundColorClassName",
+    "backdropColorClassName",
+    "backgroundColorClassName",
+    "ListFooterComponentClassName",
+    "ListHeaderComponentClassName"
+  ],
+  "tailwindCSS.classFunctions": ["useResolveClassNames"]
+  ```
