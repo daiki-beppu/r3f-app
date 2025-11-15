@@ -11,4 +11,3 @@ bunx create-expo-app@latest
 ```bash
 bun run reset-project
 ```
-
