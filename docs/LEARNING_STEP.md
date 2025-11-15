@@ -47,10 +47,10 @@ React Native と Expo の基本を理解し、TypeScript を使った開発の�
 
 #### 1.5 新アーキテクチャの概念把握
 
-- [ ] JSI（JavaScript Interface）が従来のブリッジと何が違うか理解
-- [ ] Fabric レンダラーの役割を調査
+- [x] JSI（JavaScript Interface）が従来のブリッジと何が違うか理解
+- [x] Fabric レンダラーの役割を調査
 - [ ] TurboModules の概念を理解（実装は不要、概念のみ）
-- [ ] `app.json` の `newArchEnabled: true` の意味を確認
+- [x] `app.json` の `newArchEnabled: true` の意味を確認
 
 ### 達成条件
 
