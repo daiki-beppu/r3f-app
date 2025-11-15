@@ -22,28 +22,28 @@ React Native と Expo の基本を理解し、TypeScript を使った開発の�
 
 - [x] `bun start` でMetro Bundlerが起動することを確認
 - [x] iOS/Android/Webで起動できることを確認
-- [ ] TypeScript の型チェックが動作することを確認（`tsc --noEmit`）
+- [x] TypeScript の型チェックが動作することを確認（`tsc --noEmit`）
 
 #### 1.2 Expo Router の理解
 
-- [ ] `app/_layout.tsx` のStack navigatorの仕組みを理解
-- [ ] `app/index.tsx` を読んでルートスクリーンの構造を把握
-- [ ] 新しいスクリーンを追加してナビゲーションをテスト（例：`app/about.tsx`）
-- [ ] `router.push()` や `Link` コンポーネントの使い方を確認
+- [x] `app/_layout.tsx` のStack navigatorの仕組みを理解
+- [x] `app/index.tsx` を読んでルートスクリーンの構造を把握
+- [x] 新しいスクリーンを追加してナビゲーションをテスト（例：`app/about.tsx`）
+- [x] `router.push()` や `Link` コンポーネントの使い方を確認
 
 #### 1.3 React Native コンポーネントの基礎
 
-- [ ] View、Text、Pressable を使った簡単なコンポーネント作成
-- [ ] StyleSheet と inline style の違いを理解
-- [ ] Flexbox レイアウトの練習（column、row、justifyContent、alignItems）
+- [x] View、Text、Pressable を使った簡単なコンポーネント作成
+- [x] StyleSheet と inline style の違いを理解
+- [x] Flexbox レイアウトの練習（column、row、justifyContent、alignItems）
 - [ ] SafeAreaView の使い方を確認
 
 #### 1.4 TypeScript 型の活用
 
-- [ ] コンポーネントの Props に型を定義
-- [ ] 型推論と明示的型定義の違いを理解
-- [ ] `@/` パスエイリアスを使ったインポート
-- [ ] 型エラーをゼロにする
+- [x] コンポーネントの Props に型を定義
+- [x] 型推論と明示的型定義の違いを理解
+- [x] `@/` パスエイリアスを使ったインポート
+- [x] 型エラーをゼロにする
 
 #### 1.5 新アーキテクチャの概念把握
 
