@@ -539,7 +539,7 @@ Level 2-B: TurboModules（ネイティブ機能）
 ```javascript
 // アプリ起動時にすべてのモジュールをロード
 // ↓ 起動が遅い（使わない機能もロードされる）
-import { NativeModules } from "react-native";
+import { NativeModules } from 'react-native';
 const { Camera, GPS, FileSystem, Bluetooth } = NativeModules;
 // すべて起動時にメモリに常駐
 ```
@@ -549,10 +549,10 @@ const { Camera, GPS, FileSystem, Bluetooth } = NativeModules;
 ```javascript
 // 使用時にのみロード
 // ↓ 起動が速い（必要な機能だけロード）
-import { TurboModuleRegistry } from "react-native";
+import { TurboModuleRegistry } from 'react-native';
 
 // 実際に使うタイミングでロード
-const Camera = TurboModuleRegistry.get("RNCamera");
+const Camera = TurboModuleRegistry.get('RNCamera');
 ```
 
 #### 2. 同期的な実行
@@ -581,7 +581,7 @@ console.log(measurements.width); // すぐ使える
 
 ```javascript
 // 型定義が不完全
-NativeModules.Camera.takePicture("wrong", "types"); // 実行時エラー
+NativeModules.Camera.takePicture('wrong', 'types'); // 実行時エラー
 ```
 
 **TurboModules:**
@@ -592,8 +592,8 @@ interface CameraModule {
   takePicture(options: PhotoOptions): Promise<PhotoResult>;
 }
 
-const Camera = TurboModuleRegistry.get<CameraModule>("RNCamera");
-Camera.takePicture("wrong"); // コンパイルエラー（型が合わない）
+const Camera = TurboModuleRegistry.get<CameraModule>('RNCamera');
+Camera.takePicture('wrong'); // コンパイルエラー（型が合わない）
 ```
 
 ### このプロジェクトでの TurboModules
@@ -641,7 +641,7 @@ Camera.takePicture("wrong"); // コンパイルエラー（型が合わない）
 **Reanimated が TurboModules を活用:**
 
 ```javascript
-import { useSharedValue, useAnimatedStyle } from "react-native-reanimated";
+import { useSharedValue, useAnimatedStyle } from 'react-native-reanimated';
 
 // Reanimated は内部で TurboModules + JSI を活用
 const offset = useSharedValue(0);
@@ -754,15 +754,15 @@ npx create-expo-app -e with-router-uniwind
 - `src/global.css` を作成して下記の内容を追加
 
   ```css
-  @import "tailwindcss";
-  @import "uniwind";
+  @import 'tailwindcss';
+  @import 'uniwind';
   ```
 
 - プロジェクトルートに `metro.config.js` を作成して下記の内容を追加(公式ドキュメントからそのまま引用)
 
   ```js
-  const { getDefaultConfig } = require("expo/metro-config");
-  const { withUniwindConfig } = require("uniwind/metro"); // make sure this import exists
+  const { getDefaultConfig } = require('expo/metro-config');
+  const { withUniwindConfig } = require('uniwind/metro'); // make sure this import exists
 
   /** @type {import('expo/metro-config').MetroConfig} */
   const config = getDefaultConfig(__dirname);
@@ -770,9 +770,9 @@ npx create-expo-app -e with-router-uniwind
   // Apply uniwind modifications before exporting
   const uniwindConfig = withUniwindConfig(config, {
     // relative path to your global.css file
-    cssEntryFile: "./src/global.css",
+    cssEntryFile: './src/global.css',
     // optional: path to typings
-    dtsFile: "./src/uniwind-types.d.ts",
+    dtsFile: './src/uniwind-types.d.ts',
   });
 
   module.exports = uniwindConfig;
@@ -832,3 +832,98 @@ src ディレクリを追加したのでそちらに対応
 ```
 
 uniwind はセットアップを学べたので満足
+
+## skia のセットアップ
+
+ライブラリのインストール
+
+```bash
+npx expo install @shopify/react-native-skia
+```
+
+テスト用のページを作成
+skia は nativewind に対応してないみたい
+なので StyleSheet で css を記述
+
+```tsx
+import { Canvas, Circle, Group, Path, Rect } from '@shopify/react-native-skia';
+import { Stack } from 'expo-router';
+import { StyleSheet, View } from 'react-native';
+
+export default function SkiaTest() {
+  return (
+    <>
+      <Stack.Screen options={{ title: 'Skia Test' }} />
+      <View className="flex-1">
+        <Canvas style={styles.canvas}>
+          {/* 円 */}
+          <Circle
+            cx={256} // X軸の座標(0 のとき円の中心が画面左端)
+            cy={256} // Y軸の座標(0 のとき円の中心が画面上端)
+            r={32} // 円の大きさ
+            color="green" // 色
+          />
+
+          {/* 四角形 */}
+          <Rect
+            x={100} // x軸の座標 (0のとき 左辺が画面左端)
+            y={300} // y軸の座標 (0のとき 上辺が画面上端)
+            width={100} // 幅
+            height={100} // 高さ
+            color={'red'} // 色
+          />
+
+          {/* パス（自由な形） */}
+          <Path
+            path="M 128 0 L 168 80 L 256 93 L 192 155 L 207 244 L 128 202 L 49 244 L 64 155 L 0 93 L 88 80 L 128 0 Z"
+            color="lightblue"
+          />
+
+          {/* グループ化してまとめて移動 */}
+          <Group
+            transform={[
+              {
+                translate: [
+                  120, // x軸の移動量
+                  100, // y軸の移動量
+                ],
+
+                // このように個別で指定することもできる
+                translateX: 0,
+                translateY: 0,
+              },
+            ]}>
+            <Rect
+              x={100} // x軸の座標 (0のとき 左辺が画面左端)
+              y={300} // y軸の座標 (0のとき 上辺が画面上端)
+              width={100} // 幅
+              height={100} // 高さ
+              color={'red'} // 色
+            />
+            <Circle
+              cx={256} // X軸の座標(0 のとき円の中心が画面左端)
+              cy={256} // Y軸の座標(0 のとき円の中心が画面上端)
+              r={32} // 円の大きさ
+              color="green" // 色
+            />
+          </Group>
+        </Canvas>
+      </View>
+    </>
+  );
+}
+
+const styles = StyleSheet.create({
+  canvas: {
+    flex: 1,
+  },
+});
+```
+
+<details>
+
+<summary>実装画面</summary>
+
+[![Image from Gyazo](https://i.gyazo.com/4825ade98a05f89188de2cff0c56e4d1.png)](https://gyazo.com/4825ade98a05f89188de2cff0c56e4d1)
+
+</details>

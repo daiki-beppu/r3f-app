@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Icon } from '@/components/ui/icon';
 import { Text } from '@/components/ui/text';
-import { Stack } from 'expo-router';
+import { Link, Stack } from 'expo-router';
 import { MoonStarIcon, SunIcon } from 'lucide-react-native';
 import { useColorScheme } from 'nativewind';
 import * as React from 'react';
@@ -23,7 +23,12 @@ export default function Screen() {
     <>
       <Stack.Screen options={SCREEN_OPTIONS} />
       <View className="flex-1 items-center justify-center gap-8 p-4">
-        <Text>Hello World !!</Text>
+        <Text className="text-xl">WellCome R3F App !!</Text>
+        <Link asChild href={'/skia-test'}>
+          <Button>
+            <Text>GO Skia Test !!</Text>
+          </Button>
+        </Link>
       </View>
     </>
   );

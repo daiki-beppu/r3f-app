@@ -99,52 +99,52 @@ React Native Reusables を使って、型安全で美しい UI コンポーネ�
 
 #### 2.1 React Native Reusables セットアップ
 
-- [ ] 必要なパッケージのインストール
+- [x] 必要なパッケージのインストール
   - `nativewind`
   - `react-native-reanimated`
   - `@rn-primitives/*` 関連パッケージ
-- [ ] NativeWind v4 の設定（`tailwind.config.js`）
-- [ ] `global.css` の設定
-- [ ] VS Code の Tailwind CSS IntelliSense を設定
+- [x] NativeWind v4 の設定（`tailwind.config.js`）
+- [x] `global.css` の設定
+- [x] VS Code の Tailwind CSS IntelliSense を設定
 
 #### 2.2 NativeWind v4 とテーマシステム
 
-- [ ] NativeWind v4 の class-based スタイリングの理解
-- [ ] ライト/ダークモードの class 切り替え（`dark:` prefix）
-- [ ] システムテーマとの同期実装（`useColorScheme` 使用）
-- [ ] カスタムカラーパレットの作成（`tailwind.config.js`）
-- [ ] テーマプロバイダーの実装
+- [x] NativeWind v4 の class-based スタイリングの理解
+- [x] ライト/ダークモードの class 切り替え（`dark:` prefix）
+- [x] システムテーマとの同期実装（`useColorScheme` 使用）
+- [x] カスタムカラーパレットの作成（`tailwind.config.js`）
+- [x] テーマプロバイダーの実装
 
 #### 2.3 基本コンポーネント作成
 
-- [ ] `components/ui/button.tsx` - 型安全なバリアント対応
-- [ ] `components/ui/card.tsx` - ダーク対応のカード
-- [ ] `components/ui/switch.tsx` - アニメーション付きスイッチ
-- [ ] `components/ui/text.tsx` - 型安全なテキストコンポーネント
-- [ ] コンポーネントの TypeScript 型定義
+- [x] `components/ui/button.tsx` - 型安全なバリアント対応
+- [x] `components/ui/card.tsx` - ダーク対応のカード
+- [x] `components/ui/switch.tsx` - アニメーション付きスイッチ
+- [x] `components/ui/text.tsx` - 型安全なテキストコンポーネント
+- [x] コンポーネントの TypeScript 型定義
 
 #### 2.4 Headless UI パターンの理解
 
-- [ ] `@rn-primitives` を使った Headless コンポーネント
-- [ ] コンポーネント合成パターン（Compound Components）
-- [ ] Context API によるステート共有
-- [ ] カスタムフックの作成
+- [x] `@rn-primitives` を使った Headless コンポーネント
+- [x] コンポーネント合成パターン（Compound Components）
+- [x] Context API によるステート共有
+- [x] カスタムフックの作成
 
 #### 2.5 アクセシビリティとアニメーション
 
-- [ ] `accessibilityRole`、`accessibilityLabel` の設定
-- [ ] `accessibilityState` によるステート通知
-- [ ] `react-native-reanimated` の基本理解
-- [ ] `useSharedValue`、`useAnimatedStyle` の使い方
-- [ ] `withTiming`、`withSpring` アニメーション
-- [ ] ボタンタップやスイッチ切り替えにアニメーション適用
+- [x] `accessibilityRole`、`accessibilityLabel` の設定
+- [x] `accessibilityState` によるステート通知
+- [x] `react-native-reanimated` の基本理解
+- [x] `useSharedValue`、`useAnimatedStyle` の使い方
+- [x] `withTiming`、`withSpring` アニメーション
+- [x] ボタンタップやスイッチ切り替えにアニメーション適用
 
 #### 2.6 レスポンシブ対応
 
-- [ ] Tailwind のブレークポイント（sm、md、lg、xl）の設定
-- [ ] 画面サイズに応じたレイアウト調整
-- [ ] `useMediaQuery` フックの実装（オプション）
-- [ ] タブレット・スマホでの表示確認
+- [x] Tailwind のブレークポイント（sm、md、lg、xl）の設定
+- [x] 画面サイズに応じたレイアウト調整
+- [x] `useMediaQuery` フックの実装（オプション）
+- [x] タブレット・スマホでの表示確認
 
 ### 達成条件
 
@@ -195,17 +195,17 @@ React Native Skia を使って、高性能な 2D グラフィックスの基礎�
 
 #### 3.1 Skia セットアップ
 
-- [ ] `@shopify/react-native-skia` をインストール
-- [ ] 新アーキテクチャとの互換性を確認
-- [ ] 最初の Canvas を表示
+- [x] `@shopify/react-native-skia` をインストール
+- [x] 新アーキテクチャとの互換性を確認
+- [x] 最初の Canvas を表示
 
 #### 3.2 基本描画プリミティブ
 
-- [ ] `<Canvas>` コンポーネントの理解
-- [ ] `<Rect>`, `<Circle>`, `<Path>` の描画
-- [ ] `<Text>` でカスタムフォント描画
-- [ ] `<Group>` で要素のグループ化
-- [ ] transform（translate、rotate、scale）の使い方
+- [x] `<Canvas>` コンポーネントの理解
+- [x] `<Rect>`, `<Circle>`, `<Path>` の描画
+- [x] `<Text>` でカスタムフォント描画
+- [x] `<Group>` で要素のグループ化
+- [x] transform（translate、rotate、scale）の使い方
 
 #### 3.3 Paint と Shader
 
