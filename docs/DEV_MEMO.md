@@ -827,6 +827,6 @@ src ディレクリを追加したのでそちらに対応
       "@/*": ["./src/*"] // "./*" → "./src/*" に変更
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "src/expo-env.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }
 ```
