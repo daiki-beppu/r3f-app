@@ -813,3 +813,20 @@ npx create-expo-app -e with-router-uniwind
   ],
   "tailwindCSS.classFunctions": ["useResolveClassNames"]
   ```
+
+- `tsconfig.json` の更新
+
+src ディレクリを追加したのでそちらに対応
+
+```json
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@/*": ["./src/*"] // "./*" → "./src/*" に変更
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "src/expo-env.d.ts"]
+}
+```
