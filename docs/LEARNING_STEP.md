@@ -209,18 +209,19 @@ React Native Skia を使って、高性能な 2D グラフィックスの基礎�
 
 #### 3.3 Paint と Shader
 
-- [ ] `<Paint>` で色・ストローク・ブレンドモード設定
-- [ ] `<LinearGradient>` でグラデーション作成
-- [ ] `<RadialGradient>` で放射状グラデーション
-- [ ] `<BlurMask>` でぼかし効果
+- [x] `<Paint>` で色・ストローク・ブレンドモード設定
+- [x] `<LinearGradient>` でグラデーション作成
+- [x] `<RadialGradient>` で放射状グラデーション
+- [x] `<BlurMask>` でぼかし効果
 
-#### 3.4 Skia アニメーション
+#### 3.4 Skia アニメーション（Reanimated 統合）
 
-- [ ] `useValue` で値を管理
-- [ ] `useComputedValue` で計算値を作成
-- [ ] `useTiming` でアニメーション
-- [ ] `useLoop` で無限ループアニメーション
-- [ ] `useTouchHandler` でタッチインタラクション
+- [x] `useSharedValue` で値を管理（Reanimated）
+- [x] `useDerivedValue` で計算値を作成（Reanimated）
+- [x] `withTiming` でアニメーション（Reanimated）
+- [x] `withRepeat` で無限ループアニメーション（Reanimated）
+- [x] Skia コンポーネントに Shared Value を渡してアニメーション
+- [x] `Gesture` API でタッチインタラクション（react-native-gesture-handler）
 
 #### 3.5 実践：流体 UI とローディングアニメーション
 

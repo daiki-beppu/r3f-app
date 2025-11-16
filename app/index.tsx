@@ -29,6 +29,11 @@ export default function Screen() {
             <Text>GO Skia Test !!</Text>
           </Button>
         </Link>
+        <Link asChild href={'/skia-animations'}>
+          <Button>
+            <Text>GO Skia Animation !!</Text>
+          </Button>
+        </Link>
       </View>
     </>
   );
