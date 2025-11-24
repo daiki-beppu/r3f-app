@@ -34,6 +34,11 @@ export default function Screen() {
             <Text>GO Skia Animation !!</Text>
           </Button>
         </Link>
+        <Link asChild href={'/r3f-test'}>
+          <Button>
+            <Text>GO R3F test !!</Text>
+          </Button>
+        </Link>
       </View>
     </>
   );
