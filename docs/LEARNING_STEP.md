@@ -225,10 +225,10 @@ React Native Skia を使って、高性能な 2D グラフィックスの基礎�
 
 #### 3.5 実践：流体 UI とローディングアニメーション
 
-- [ ] スクロールに追従する波形背景
-- [ ] 回転するグラデーション背景
-- [ ] スケルトンローディング UI
-- [ ] カスタムプログレスバー
+- [x] スクロールに追従する波形背景
+- [x] 回転するグラデーション背景
+- [x] スケルトンローディング UI
+- [x] カスタムプログレスバー
 
 ### 達成条件
 
@@ -276,36 +276,36 @@ React Three Fiber を使って、React の宣言的な書き方で 3D シーン�
 
 #### 4.1 R3F セットアップ（Web版で学習）
 
-- [ ] まず Web 版で `@react-three/fiber` を試す（学習用）
-- [ ] `<Canvas>` の基本構造を理解
-- [ ] Scene、Camera、Renderer の関係を理解
+- [x] まず Web 版で `@react-three/fiber` を試す（学習用）
+- [x] `<Canvas>` の基本構造を理解
+- [x] Scene、Camera、Renderer の関係を理解
 
 #### 4.2 3D シーンの基本構成要素
 
-- [ ] `<mesh>` でジオメトリとマテリアルを理解
-- [ ] `<boxGeometry>`, `<sphereGeometry>`, `<planeGeometry>` の使い方
-- [ ] `<meshStandardMaterial>` の基本プロパティ（color、metalness、roughness）
-- [ ] `<ambientLight>`, `<directionalLight>`, `<pointLight>` のライティング
+- [x] `<mesh>` でジオメトリとマテリアルを理解
+- [x] `<boxGeometry>`, `<sphereGeometry>`, `<planeGeometry>` の使い方
+- [x] `<meshStandardMaterial>` の基本プロパティ（color、metalness、roughness）
+- [x] `<ambientLight>`, `<directionalLight>`, `<pointLight>` のライティング
 
 #### 4.3 useFrame でアニメーション
 
-- [ ] `useFrame` の仕組み（毎フレーム実行）
-- [ ] `ref` で 3D オブジェクトにアクセス
-- [ ] rotation、position、scale を動的に変更
-- [ ] delta time を使った滑らかなアニメーション
+- [x] `useFrame` の仕組み（毎フレーム実行）
+- [x] `ref` で 3D オブジェクトにアクセス
+- [x] rotation、position、scale を動的に変更
+- [x] delta time を使った滑らかなアニメーション
 
 #### 4.4 インタラクション
 
-- [ ] `onClick` で 3D オブジェクトをクリック
-- [ ] `onPointerOver` / `onPointerOut` でホバー効果
-- [ ] useState と組み合わせてインタラクティブな挙動を実装
+- [x] `onClick` で 3D オブジェクトをクリック
+- [x] `onPointerOver` / `onPointerOut` でホバー効果
+- [x] useState と組み合わせてインタラクティブな挙動を実装
 
 #### 4.5 実践：3D デモアプリ
 
-- [ ] 回転する 3D オブジェクト（Box、Sphere、Torus）
-- [ ] UI からマテリアルの色を変更
-- [ ] クリックで形状を切り替え
-- [ ] カメラ位置をアニメーション
+- [x] 回転する 3D オブジェクト（Box、Sphere、Torus）
+- [x] UI からマテリアルの色を変更
+- [x] クリックで形状を切り替え
+- [x] カメラ位置をアニメーション
 
 ### 達成条件
 
